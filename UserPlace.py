@@ -1,4 +1,4 @@
-from mapGenerator import mapList
+from WrapList import mapList
 import random
 __author__ = 'John'
 
