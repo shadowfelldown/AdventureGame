@@ -10,3 +10,4 @@ def wrap_list(lst, items_per_line=10):
 mapSize = 100
 mapList = [random.randrange(0,5,1) for _ in range (mapSize)]
 #print (wrap_list(mapList))
+

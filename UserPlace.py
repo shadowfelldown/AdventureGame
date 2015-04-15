@@ -18,10 +18,7 @@ else:
 mapList.insert(randomEndPos, "[]")
 
 
+
 print (userRandomPos)
 print(randomEndPos)
 print (mapList)
-
-
-
-
