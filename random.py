@@ -2,17 +2,12 @@
 
     integers
     --------
-           uniform within range
+           uniform within range3
 
     sequences
     ---------
            pick random element
-           pick random sample
-           generate random permutation
 
-    distributions on the real line:
-    ------------------------------
-           uniform
            triangular
            normal (Gaussian)
            lognormal
