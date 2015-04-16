@@ -31,3 +31,15 @@ def userplace(maplist):
     maplist[randomendpos] = 'W'
 
     return userrandompos, randomendpos, maplist
+
+def roomchoices(maplist,usrplace):
+    choices = []
+    if maplist[usrplace-10] != 0:
+        choices.append('NORTH')
+    if maplist[usrplace-10] != 0:
+        choices.append('SOUTH')
+    if maplist[usrplace+1] != 0:
+        choices.append('EAST')
+    if maplist[usrplace-1] != 0:
+        choices.append('WEST')
+    return print('There is a doorway to the', ', '.join(choices[0:-1]), 'and', choices[-1])
