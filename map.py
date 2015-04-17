@@ -13,7 +13,7 @@ def display(lst, items_per_line=10):
         chunk = lst[i:i + items_per_line]
         line = ", ".join("{!r}".format(x) for x in chunk)
         lines.append(line)
-    return print("[" + ",\n ".join(lines) + "]")
+    print("[" + ",\n ".join(lines) + "]")
 
 
 def userplace(maplist):
@@ -42,4 +42,4 @@ def roomchoices(maplist,usrplace):
         choices.append('EAST')
     if maplist[usrplace-1] != 0:
         choices.append('WEST')
-    return print('There is a doorway to the', ', '.join(choices[0:-1]), 'and', choices[-1])
+    print 'There is a doorway to the', ', '.join(choices[0:-1]), 'and', choices[-1]

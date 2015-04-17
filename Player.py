@@ -6,7 +6,7 @@ def distanceto(userpos,target,):
         distance = round((userpos - target) / 10)
     else:
         distance = round((target - userpos) / 10)
-    return print ("You are", distance, " rooms away from your goal")
+    print "You are", distance, " rooms away from your goal"
     #once target function is defined, will be room name, i.e goal, treasure, exit.
-def movement(userpos,mapList,direction)
+#def movement(userpos,mapList,direction)
 
