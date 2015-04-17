@@ -1,6 +1,12 @@
 import random
 import map
 __author__ = 'Daniel'
-randPos = random.randrange(0, 99, 1)
-map.display(mapList)
+def distanceto(userpos,target,):
+    if userpos > target:
+        distance = round((userpos - target) / 10)
+    else:
+        distance = round((target - userpos) / 10)
+    print "You are", distance, " rooms away from your goal"
+    #once target function is defined, will be room name, i.e goal, treasure, exit.
+#def movement(userpos,mapList,direction)
 
