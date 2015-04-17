@@ -10,3 +10,4 @@ def display(lst, items_per_line=10):
         line = ", ".join("{!r}".format(x) for x in chunk)
         lines.append(line)
     return "[" + ",\n ".join(lines) + "]"
+def RoomGenerate(Number):
