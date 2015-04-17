@@ -1,6 +1,7 @@
 __author__ = 'John'
 import random
-def generate()
+def generate():
+    global rooms1
     rooms1 = []
     rooms1.append("You enter a dusty room with a smooth cobblestone floor. \n\
     It appears as though nobody has set food in here for years. \n")
@@ -29,7 +30,6 @@ def generate()
     rooms1.append('This room contains nothing but a table small round fishbowl with a single goldfish swimming in it. \n\
     The goldfish winks at you. \n')
     rooms1.append('')
-
     return rooms1
 
 def roomgenerator(maplist):
@@ -45,6 +45,6 @@ def roomgenerator(maplist):
 #            disclist[x] = rooms3.pop([random.randrange(0, len(rooms3), 1)])
 #        if maplist[x] == 4:
 #            disclist[x] = rooms4.pop([random.randrange(0, len(rooms4), 1)])
-
+    print (disclist)
 
 
