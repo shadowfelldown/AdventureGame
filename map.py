@@ -1,12 +1,8 @@
 __author__ = "Daniel"
-import random
-
-
 def generate():
+    import random
     mapSize = 100
-    return [random.randrange(0, 5, 1) for _ in range(mapSize)]
-
-
+    return [random.randrange(0,5,1) for _ in range (mapSize)]
 def display(lst, items_per_line=10):
     lines = []
     for i in range(0, len(lst), items_per_line):
