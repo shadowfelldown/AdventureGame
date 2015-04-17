@@ -27,7 +27,7 @@ get out as soon as possible \n'
 
 
 
-print(room6
-)
+
+
 
 
