@@ -32,10 +32,11 @@ def roomchoices(maplist,usrplace):
     choices = []
     if maplist[usrplace-10] != 0:
         choices.append('NORTH')
-    if maplist[usrplace-10] != 0:
+    if maplist[usrplace+10] != 0:
         choices.append('SOUTH')
     if maplist[usrplace+1] != 0:
         choices.append('EAST')
     if maplist[usrplace-1] != 0:
         choices.append('WEST')
-    print 'There is a doorway to the', ', '.join(choices[0:-1]), 'and', choices[-1]
+    describe = 'There is a doorway to the', ', '.join(choices[0:-1]), 'and', choices[-1]
+    return describe, choices
