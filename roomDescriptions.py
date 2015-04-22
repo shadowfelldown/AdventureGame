@@ -29,22 +29,41 @@ def generate():
     get out as soon as possible. \n')
     rooms1.append('This room contains nothing but a table small round fishbowl with a single goldfish swimming in it. \n\
     The goldfish winks at you. \n')
-    rooms1.append('')
+    rooms1.append('This room has grey stone walls, ceiling, and floor. There is a broken iron chandelier in the middle of it. \n\
+     The candles on the chandelier are only half burnt. There is a powerful echo in the room which amplifies all sounds made within. \n')
+    rooms1.append('The walls of this room are covered with ancient tapestries. They are rotten and full of carpet bugs. \n\
+     The floor is made of wood, which has somehow survived in perfectly pristine condition. \n')
+    rooms1.append("This room is oval in shape with no distinct corners. \n\
+    The floor feels gritty beneath your feet, and the walls are painted with a continuous fresco of a seascape. \n\
+    Oddly, you feel that if you stay here for any time you'll become seasick.\n")
+    rooms1.append("This room looks like a living room, but there is no furniture in it. Only outlines between gathering dust indicate where furniture used be. \n\
+     The walls used to be full of paintings, but they've been removed as well.\n")
+    rooms1.append("This room contains a library, but all of the books are empty. \n\
+    None of them even have titles.\n")
+    rooms1.append("This room has reversed gravity, but the ceiling is padded with a soft spongey material, and there are stairs leading back down to each door. \n\
+     resting in the center of the floor above you is a candle whose smoke is rising upwards towards you.\n")
     return rooms1
 
 def roomgenerator(maplist):
     disclist = maplist
-    for x in maplist:
-        if maplist[x] == 0 or 4:
+    print maplist.index
+    for x,a in enumerate(maplist):
+        print x, a
+        if a == 0:
             disclist[x] = 'There is a wall'
-        if maplist[x] == 1:
-            disclist[x] = rooms1.pop([random.randrange(0, len(rooms1), 1)])
-#        if maplist[x] == 2:
-#            #disclist[x] = rooms2.pop([random.randrange(0, len(rooms2), 1)])
-#        if maplist[x] == 3:
+        if a == 1:
+            disclist[x] = rooms1.pop(random.randrange(0, len(rooms1), 1))
+        if a == 2:
+            'There is a wall'
+            #disclist[x] = rooms1.pop(random.randrange(0, len(rooms1), 1))
+            #disclist[x] = rooms2.pop([random.randrange(0, len(rooms2), 1)])
+        if a == 3:
+            'There is a wall'
+#            disclist[x] = rooms1.pop(random.randrange(0, len(rooms1), 1))
 #            disclist[x] = rooms3.pop([random.randrange(0, len(rooms3), 1)])
-#        if maplist[x] == 4:
-#            disclist[x] = rooms4.pop([random.randrange(0, len(rooms4), 1)])
-    print (disclist)
+        if a == 4:
+            disclist[x] = 'There is a wall'
+ #           disclist[x] = rooms4.pop([random.randrange(0, len(rooms4), 1)])
+    return (disclist)
 
 

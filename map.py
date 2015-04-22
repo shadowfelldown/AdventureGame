@@ -1,6 +1,6 @@
 __author__ = "Daniel"
+import random
 def generate():
-    import random
     mapSize = 100
     return [random.randrange(0,5,1) for _ in range (mapSize)]
 def display(lst, items_per_line=10):
@@ -13,9 +13,10 @@ def display(lst, items_per_line=10):
 
 
 def userplace(maplist):
+    displist = maplist
     userrandompos = random.randrange(0, 99, 1)
 
-    maplist[userrandompos] = 'X'
+#    maplist[userrandompos] = 'X'
 
     if userrandompos > 50:
         randomplacevar = random.randrange(40, 50, 1)
@@ -24,9 +25,9 @@ def userplace(maplist):
         randomplacevar = random.randrange(40, 50, 1)
         randomendpos = random.randrange(49, (userrandompos + randomplacevar), 1)
 
-    maplist[randomendpos] = 'W'
+#    maplist[randomendpos] = 'W'
 
-    return userrandompos, randomendpos, maplist
+    return userrandompos, randomendpos, maplist, displist
 
 def roomchoices(maplist,usrplace):
     choices = []
