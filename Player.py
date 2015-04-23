@@ -8,21 +8,25 @@ def distanceto(userpos,target,):
         distance = round((target - userpos) / 10)
     print "You are", distance, " rooms away from your goal"
     #once target function is defined, will be room name, i.e goal, treasure, exit.
-def movement(userpos,mapList,choices):
+def movement(userpos,maplist,choices):
     direction = raw_input('Which Way do you go?\n')
-    if direction == 'NORTH' and choices[0] == 'NORTH':
+    if direction == 'NORTH' and maplist[userpos-10] != 0:
         userpos = userpos-10
         print 'you proceed NORTH'
-    if direction == 'SOUTH' and choices[1] == 'SOUTH':
+        return userpos
+    if direction == 'SOUTH' and maplist[userpos+10] != 0:
         userpos = userpos+10
         print 'you proceed SOUTH'
-    if direction == 'EAST' and choices[2] == 'EAST':
+        return userpos
+    if direction == 'EAST' and maplist[userpos-1] != 0:
         userpos = userpos+1
         print 'you proceed EAST'
-    if direction == 'WEST' and choices[3] == 'WEST':
+        return userpos
+    if direction == 'WEST' and maplist[userpos+1] != 0:
         userpos = userpos-1
         print 'you proceed WEST'
+        return userpos
     else:
         print 'you cannot go that way'
 
-
+        return userpos

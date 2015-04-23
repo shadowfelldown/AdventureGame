@@ -11,33 +11,43 @@ def display(lst, items_per_line=10):
         lines.append(line)
     print("[" + ",\n ".join(lines) + "]")
 
+def userplace(usrpos, maplist):
+    displist = list(maplist)
 
-def userplace(maplist):
-    displist = maplist
-    userrandompos = random.randrange(0, 99, 1)
+    displist[usrpos] = 'X'
 
-#    maplist[userrandompos] = 'X'
-
-    if userrandompos > 50:
+    if usrpos > 50:
         randomplacevar = random.randrange(40, 50, 1)
-        randomendpos = random.randrange(0, (userrandompos - randomplacevar), 1)
+        randomendpos = random.randrange(0, (usrpos - randomplacevar), 1)
     else:
         randomplacevar = random.randrange(40, 50, 1)
-        randomendpos = random.randrange(49, (userrandompos + randomplacevar), 1)
+        randomendpos = random.randrange(49, (usrpos + randomplacevar), 1)
 
-#    maplist[randomendpos] = 'W'
+    displist[randomendpos] = 'W'
 
-    return userrandompos, randomendpos, maplist, displist
+    return usrpos, randomendpos, maplist, displist
+
+def redraw(usrpos,endpos,maplist):
+    displist = list(maplist)
+    displist[usrpos] = 'X'
+    displist[endpos] = 'W'
+    return displist
 
 def roomchoices(maplist,usrplace):
     choices = []
-    if maplist[usrplace-10] != 0:
-        choices.append('NORTH')
-    if maplist[usrplace+10] != 0:
-        choices.append('SOUTH')
-    if maplist[usrplace+1] != 0:
-        choices.append('EAST')
-    if maplist[usrplace-1] != 0:
-        choices.append('WEST')
-    describe = 'There is a doorway to the', ', '.join(choices[0:-1]), 'and', choices[-1]
+    print (usrplace)
+    try:
+        if maplist[usrplace-10] != 0:
+            choices.append('NORTH')
+        if maplist[usrplace+10] != 0:
+            choices.append('SOUTH')
+        if usrplace % 10 != 9:
+            if maplist[usrplace+1] != 0:
+                choices.append('EAST')
+        if usrplace % 10 != 0:
+            if maplist[usrplace-1] != 0:
+                choices.append('WEST')
+    except IndexError:
+            maplist[usrplace] = 'null'
+    describe = 'There is a doorway to the', ', '.join(choices[0:-1]), 'and', choices[-0]
     return describe, choices
