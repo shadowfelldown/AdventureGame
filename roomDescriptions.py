@@ -168,7 +168,7 @@ def roomgenerator(maplist):
     for x,a in enumerate(maplist):
 #        print x, a
         if a == 0:
-            disclist[x] = 'There is a wall'
+            disclist[x] = 'Teleportation can be dangerous, and somehow you begin to materialize inside a wall.  \n Move on quickly before you are imprisoned forever in stone.'
         if a == 1:
             disclist[x] = rooms1.pop(random.randrange(0, len(rooms1), 1))
         if a == 2:
@@ -180,7 +180,9 @@ def roomgenerator(maplist):
 #            disclist[x] = rooms1.pop(random.randrange(0, len(rooms1), 1))
 #            disclist[x] = rooms3.pop([random.randrange(0, len(rooms3), 1)])
         if a == 4:
-            disclist[x] = 'There is a wall'
+            disclist[x] = 'Teleportation can be dangerous, and somehow you begin to materialize inside a wall.  \n Move on quickly before you are imprisoned forever in stone.'
+        if a == 5:
+            disclist[x] = 'You enter a cavernous natural cave chamber. \n dominating the center of the room is an enormous stone projection hanging down from the cavern roof. \n underneath the stone is a golden TREASURE chest that is glowing in the darkness'
  #           disclist[x] = rooms4.pop([random.randrange(0, len(rooms4), 1)])
     return (disclist)
 

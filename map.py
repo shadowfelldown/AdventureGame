@@ -1,5 +1,7 @@
 __author__ = "Daniel"
 import random
+def help():
+    print 'enter phrases GO, USE or TAKE followed by the bold item to continue. \n for a hint on how far you are to the destination use HINT \n if you are stuck, type STUCK to be randomly teleported.'
 def generate():
     mapSize = 100
     return [random.randrange(0,5,1) for _ in range (mapSize)]
@@ -36,8 +38,8 @@ def redraw(usrpos,endpos,maplist):
 
 def roomchoices(maplist,usrplace):
     choices = []
-    rooms = [1, 2, 3]
-    print (usrplace)
+    rooms = [1, 2, 3, 5]
+    #print (usrplace)
     try:
         if maplist[usrplace-10] in rooms:
             choices.append('NORTH')
@@ -51,5 +53,8 @@ def roomchoices(maplist,usrplace):
                 choices.append('WEST')
     except IndexError:
             maplist[usrplace] = 'null'
-    describe = 'There is a doorway to the', ', '.join(choices[0:-1]), 'and', choices[-1]
+    if len(choices) == 1:
+        describe = 'There is a doorway to the', choices[0]
+    if len(choices) > 1:
+        describe = 'There is a doorway to the', ', '.join(choices[0:-1]), 'and', choices[-1]
     return describe, choices
